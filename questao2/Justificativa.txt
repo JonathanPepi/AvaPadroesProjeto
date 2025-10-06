@@ -1,0 +1,18 @@
+Questão 2: Plataforma de Pagamentos
+
+
+Padrão de Projeto Escolhido: Factory Method.
+
+Justificativa:
+O padrão Factory Method é perfeito para este cenário porque ele encapsula a lógica de criação de objetos. 
+O código cliente (a plataforma de pagamentos) não precisa saber como criar um ProcessadorPagamentoPIX ou um ProcessadorPagamentoCartao. 
+Ele apenas solicita à "fábrica" um processador para um determinado tipo de pagamento (ex: "PIX"). 
+A fábrica é a única responsável por saber qual classe concreta instanciar, desacoplando o cliente do processo de criação e facilitando a adição de novos meios de pagamento no futuro sem alterar o código cliente.
+
+Estrutura do Código:
+
+ProcessadorPagamento: Interface que define o método processar().
+
+ProcessadorPagamentoCartao, ProcessadorPagamentoBoleto, ProcessadorPagamentoPIX: Classes que implementam a interface com a lógica específica.
+
+PagamentoFactory: A fábrica que contém o método criarProcessador(String tipo) para instanciar o processador correto.

@@ -1,0 +1,19 @@
+Questão 3: Site de Notícias e Notificações
+
+
+Padrão de Projeto Escolhido: Observer.
+
+Justificativa:
+O padrão Observer foi projetado exatamente para este tipo de problema de notificação um-para-muitos. 
+Ele define uma relação de dependência entre objetos, onde um objeto (o "Subject" ou "Observado", no caso, o Topico) notifica automaticamente todos os seus dependentes (os "Observers" ou "Observadores", no caso, os Leitores) sobre qualquer mudança de estado (a publicação de uma nova notícia). 
+Isso desacopla completamente os tópicos dos leitores. O tópico não precisa saber quem são os leitores, apenas que eles existem e devem ser notificados.
+
+Estrutura do Código:
+
+Observador: Interface que os leitores implementarão, com um método atualizar().
+
+Leitor: Classe concreta que implementa Observador.
+
+Assunto: Interface que os tópicos implementarão, com métodos para adicionar, remover e notificar observadores.
+
+TopicoNoticia: Classe concreta que implementa Assunto.

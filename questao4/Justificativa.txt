@@ -1,0 +1,20 @@
+Questão 4: Sistema de Pedidos Online e Relatórios
+
+
+Padrão de Projeto Escolhido: Decorator.
+
+Justificativa:
+O padrão Decorator permite adicionar novas responsabilidades a um objeto dinamicamente. 
+Ele "embrulha" o objeto original com um ou mais "decoradores", cada um adicionando uma nova funcionalidade. 
+Isso se encaixa perfeitamente no requisito: temos um RelatorioBasico e queremos adicionar funcionalidades (estatísticas, PDF) de forma opcional e combinável, sem modificar a classe RelatorioBasico. 
+Cada funcionalidade extra será um decorador que envolve o relatório, estendendo seu comportamento.
+
+Estrutura do Código:
+
+Relatorio: Interface que define o método gerar().
+
+RelatorioBasico: A classe concreta que implementa o relatório simples.
+
+RelatorioDecorator: Classe abstrata que implementa Relatorio e contém uma referência para outro Relatorio.
+
+RelatorioComEstatisticas, RelatorioComExportacaoPDF: Decoradores concretos que adicionam as funcionalidades extras.

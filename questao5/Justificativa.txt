@@ -1,0 +1,18 @@
+Questão 5: Empresa de Design e Modelos de Documentos
+
+
+Padrão de Projeto Escolhido: Prototype.
+
+Justificativa:
+O padrão Prototype é usado quando o custo de criar um objeto do zero é mais alto do que o de copiá-lo. 
+Ele permite criar novos objetos clonando uma instância existente (o protótipo). 
+Isso é ideal para o problema, pois um modelo de documento pode ter uma estrutura complexa. 
+Em vez de reconstruir essa estrutura toda vez, o sistema pode simplesmente clonar um modelo pré-configurado e, em seguida, aplicar as personalizações específicas do cliente na cópia, tornando o processo muito mais eficiente.
+
+Estrutura do Código:
+
+Documento: Uma interface ou classe abstrata que declara um método clonar() e implementa Cloneable.
+
+Curriculo, PropostaComercial: Classes concretas que implementam o método de clonagem.
+
+GerenciadorDeModelos: Uma classe (opcional, mas útil) para armazenar e fornecer os protótipos prontos para clonagem.

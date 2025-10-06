@@ -1,0 +1,17 @@
+Questão 1: Sistema de Cálculo de Tarifas de Logística
+
+
+Padrão de Projeto Escolhido: Herança e Polimorfismo (com aplicação do Princípio da Responsabilidade Única - SOLID).
+
+Justificativa: A Herança é ideal para criar uma estrutura base (Transporte) que define um contrato comum para todas as modalidades. 
+O Polimorfismo permite que o sistema trate qualquer objeto de transporte de forma genérica (usando a interface/classe base), enquanto a execução do cálculo da tarifa será delegada à implementação específica de cada classe filha (TransporteTerrestre, TransporteAereo). 
+Isso resolve o requisito de tratar todos os tipos de forma genérica, mas respeitando as regras de cada um. 
+Adicionalmente, cada classe terá a Responsabilidade Única de calcular a sua própria tarifa, mantendo o código organizado e fácil de manter.
+
+Estrutura do Código:
+
+Transporte: Uma classe abstrata que define o método calcularFrete().
+
+TransporteTerrestre, TransporteAereo, TransporteMaritimo: Classes concretas que herdam de Transporte e implementam o cálculo específico do frete.
+
+CalculadoraDeFrete: Uma classe que utiliza o polimorfismo para calcular o frete sem conhecer os detalhes de cada transporte.
